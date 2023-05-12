@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Basica</title>
+</head>
+<body>
+    <h2>Calculadora</h2>
+    <script>
+        function suma(a,b) {
+            return a + b;
+        }
+        function operacion(){
+            let operacion=prompt("Ingrese la operacion que desea realizar (suma,resta,multiplicacion y division): ");
+            let numeroOperandos=parseInt(prompt("Cuantos Operandos voy a utilizar? "));
+            let resultado=0;
+            if(operacion=="suma"){
+                let suma=0;
+                for(let i=1;i<=numeroOperandos;i++){
+                    let operando=parseInt(prompt("ingrese el valor del operando "+i));
+                    suma+=operando;
+            }
+            resultado=suma;
+            }
+            else if (operacion=="resta"){
+                let resta=0;
+                for(let i=1;i<=numeroOperandos;i++){
+                    let operando=parseInt(prompt("ingrese el valor del operando "+i));
+                    resta=Math.abs(operando-resta);
+            }
+            resultado=resta;
+            }
+            else if(operacion=="division"){
+                let div=1;
+                for(let i=1;i<=numeroOperandos;i++){
+                    let operando=parseInt(prompt("ingrese el valor del operando "+i));
+                    if(operando==0){
+                        alert("division por cero no definida")
+                    }
+                    else{
+                        if(i==1){
+                            div=operando;
+                        }
+                        else{
+                            div/=operando;
+                        }
+                    }
+                }
+            resultado=div;
+            }
+            else{
+                if(operacion=="multiplicacion"){
+                    let multiplicacion=1;
+                    for(let i=1;i<=numeroOperandos;i++){
+                        let operando=parseInt(prompt("ingrese el valor del operando "+i));
+                        multiplicacion*=operando;
+                    }
+            resultado=multiplicacion;
+            }
+            return resultado;
+            }
+        }
+        let suma1=operacion();
+        document.write("el resultado de la operacion es: "+suma1);
+    </script>
+    
+</body>
+</html>
